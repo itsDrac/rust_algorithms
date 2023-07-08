@@ -6,7 +6,18 @@
 #[allow(dead_code)]
 #[allow(unused_variables)]
 fn diff_array<'a>(arr1: Vec<&'a str>, arr2: Vec<&'a str>) -> Vec<&'a str> {
-    unimplemented!()
+    let mut v3: Vec<&'a str> = Vec::new();
+    for search in arr2.iter() {
+        if !arr1.iter().any(|s| s==search) {
+            v3.push(search);
+        }
+    }
+    for search in arr1.iter() {
+        if !arr2.iter().any(|s| s==search) {
+            v3.push(search);
+        }
+    }
+    v3.sort()
 }
 
 #[cfg(test)]
