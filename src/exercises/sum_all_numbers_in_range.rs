@@ -7,7 +7,14 @@
 #[allow(dead_code)]
 #[allow(unused_variables)]
 pub fn sum_all(arr: &mut [i32; 2]) -> i32 {
-    unimplemented!()
+//    arr.sort();
+//    let mut count = 0;
+//    for i in arr[0]..=arr[1] {
+//        count += i;
+//    }
+//    count;
+    arr.sort();
+    (arr[0]..=arr[1]).sum()
 }
 
 #[cfg(test)]
